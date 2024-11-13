@@ -7,47 +7,47 @@
 <div *ngIf="isPopoverVisible"
     class="fixed bottom-[100px] right-[40px] bg-white text-black rounded-lg w-[250px] font-mono text-[14px] shadow-lg"
     style="box-shadow: 4px 4px 18px 0px rgba(0, 0, 0, 0.20);">
-    
+
     <div class="p-4 space-y-2">
 
         <!-- Date -->
         <p class="flex items-center space-x-2 p-1 rounded-md hover:bg-slate-100">
-            <lucide-icon [img]="Calendar" class="w-[16px] h-[16px]"></lucide-icon> <span
-                class="flex items-center space-x-2 p-2 rounded-md h-7">8 February 2024</span>
+            <lucide-icon [img]="Calendar" class="w-[16px] h-[16px]"></lucide-icon>
+            <span class="flex items-center space-x-2 p-2 rounded-md h-7">8 February 2024</span>
         </p>
 
         <!-- Income Section -->
         <p class="font-semibold text-gray-700">Income</p>
         <div class="flex items-center space-x-2 rounded-md">
-            <lucide-icon [img]="User" class="w-[16px] h-[16px]"></lucide-icon> <input type="text"
-                class="flex items-center space-x-2 p-2 rounded-md h-7" placeholder="Salary">
+            <lucide-icon [img]="User" class="w-[16px] h-[16px]"></lucide-icon>
+            <input [(ngModel)]="Salary" type="number" class="flex items-center space-x-2 p-2 rounded-md h-7 " placeholder="Salary">
         </div>
         <div class="flex items-center space-x-2 rounded-md">
-            <lucide-icon [img]="CircleDotDashed" class="w-[16px] h-[16px]"></lucide-icon> <input type="text"
-                class="flex items-center space-x-2 p-2 rounded-md h-7" placeholder="Other">
+            <lucide-icon [img]="CircleDotDashed" class="w-[16px] h-[16px]"></lucide-icon>
+            <input [(ngModel)]="OtherIncome" type="number" class="flex items-center space-x-2 p-2 rounded-md h-7" placeholder="Other">
         </div>
 
         <!-- Expense Section -->
         <p class="font-semibold text-gray-700">Expense</p>
         <div class="flex items-center space-x-2 rounded-md">
-            <lucide-icon [img]="Ham" class="w-[16px] h-[16px]"></lucide-icon> <input type="text"
-                class="flex items-center space-x-2 p-2 rounded-md h-7" placeholder="Food">
+            <lucide-icon [img]="Ham" class="w-[16px] h-[16px]"></lucide-icon>
+            <input [(ngModel)]="Food" type="number" class="flex items-center space-x-2 p-2 rounded-md h-7 " placeholder="Food">
         </div>
         <div class="flex items-center space-x-2 rounded-md">
-            <lucide-icon [img]="ShoppingCart" class="w-[16px] h-[16px]"></lucide-icon> <input type="text"
-                class="flex items-center space-x-2 p-2 rounded-md h-7" placeholder="Shopping">
+            <lucide-icon [img]="ShoppingCart" class="w-[16px] h-[16px]"></lucide-icon>
+            <input [(ngModel)]="Shopping" type="number" class="flex items-center space-x-2 p-2 rounded-md h-7" placeholder="Shopping">
         </div>
         <div class="flex items-center space-x-2 rounded-md">
-            <lucide-icon [img]="Car" class="w-[16px] h-[16px]"></lucide-icon> <input type="text"
-                class="flex items-center space-x-2 p-2 rounded-md h-7" placeholder="Transpot">
+            <lucide-icon [img]="Car" class="w-[16px] h-[16px]"></lucide-icon>
+            <input [(ngModel)]="Transpot" type="number" class="flex items-center space-x-2 p-2 rounded-md h-7" placeholder="Transpot">
         </div>
         <div class="flex items-center space-x-2 rounded-md">
-            <lucide-icon [img]="PiggyBank" class="w-[16px] h-[16px]"></lucide-icon> <input type="text"
-                class="flex items-center space-x-2 p-2 rounded-md h-7" placeholder="Saving">
+            <lucide-icon [img]="PiggyBank" class="w-[16px] h-[16px]"></lucide-icon>
+            <input [(ngModel)]="Saving" type="number" class="flex items-center space-x-2 p-2 rounded-md h-7" placeholder="Saving">
         </div>
         <div class="flex items-center space-x-2 rounded-md">
-            <lucide-icon [img]="CircleDotDashed" class="w-[16px] h-[16px]"></lucide-icon> <input type="text"
-                class="flex items-center space-x-2 p-2 rounded-md h-7" placeholder="Other">
+            <lucide-icon [img]="CircleDotDashed" class="w-[16px] h-[16px]"></lucide-icon>
+            <input [(ngModel)]="OtherExpense" type="number" class="flex items-center space-x-2 p-2 rounded-md h-7" placeholder="Other">
         </div>
 
         <!-- Save Button -->

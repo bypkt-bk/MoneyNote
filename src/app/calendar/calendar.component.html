@@ -26,9 +26,9 @@
 
     <!-- Render the calendar -->
     <div class="grid grid-flow-row p-[1px] grid-cols-7 bg-slate-200 gap-[1px]">
-        <div *ngFor="let date of dates"
+        <button *ngFor="let date of dates" (click)="viewDateDetail(date)"
             class="w-[128px] h-[128px] bg-white flex items-start justify-end p-2 font-mono font-normal text-[12px]">
             {{ date }}
-        </div>
+        </button>
     </div>
 </div>
