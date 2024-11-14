@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, HostListener } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
 import { LucideAngularModule, Calendar, User, CircleDotDashed, Ham, ShoppingCart, Car, PiggyBank } from 'lucide-angular';
 import { FormsModule } from '@angular/forms';
 
@@ -31,10 +31,14 @@ export class AddButtonComponent {
   readonly ShoppingCart = ShoppingCart;
   readonly Car = Car;
   readonly PiggyBank = PiggyBank;
-
+  jsonData!: any;
   togglePopover() {
     this.isPopoverVisible = true;
   }
+
+  constructor(private elRef: ElementRef) { }
+
+  @Output() dataEvent = new EventEmitter<any>();
 
   toggleSave() {
     this.isPopoverVisible = false;
@@ -45,12 +49,16 @@ export class AddButtonComponent {
       Shopping: this.Shopping,
       Transpot: this.Transpot,
       Saving: this.Saving,
-      OtherExpense: this.OtherExpense
+      OtherExpense: this.OtherExpense,
     };
-    const jsonData = JSON.stringify(data);
-    console.log(jsonData);
+    this.jsonData = JSON.stringify(data);
+    this.sendData();
   }
-  
+
+  sendData() {
+    this.dataEvent.emit(this.jsonData);
+  }
+
   @HostListener('document:click', ['$event.target'])
   onClickOutside(target: HTMLElement) {
     const isOutsideClick = !this.elRef.nativeElement.contains(target);
@@ -59,5 +67,4 @@ export class AddButtonComponent {
     }
   }
 
-  constructor(private elRef: ElementRef) { }
 }
