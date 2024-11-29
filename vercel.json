@@ -1,9 +1,14 @@
 {
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "/index.html"
-      }
-    ]
-  }
-  
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "builds": [
+    {
+      "src": "dist/money-note/**/*",
+      "use": "@vercel/static"
+    }
+  ]
+}
